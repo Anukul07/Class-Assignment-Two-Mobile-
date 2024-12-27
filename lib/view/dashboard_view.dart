@@ -9,8 +9,12 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: const Text(
+          'Anukul Bloc Assignment',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 144, 139, 152),
       ),
       body: GridView(
         padding: const EdgeInsets.all(8),
@@ -21,6 +25,12 @@ class DashboardView extends StatelessWidget {
         ),
         children: <Widget>[
           Card(
+            color: Colors.orangeAccent,
+            shadowColor: Colors.deepOrange,
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
             child: InkWell(
               onTap: () {
                 context.read<DashboardCubit>().openSimpleInterestView(context);
@@ -28,10 +38,71 @@ class DashboardView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const <Widget>[
-                  Icon(Icons.monetization_on, size: 30),
+                  Icon(Icons.monetization_on, size: 40, color: Colors.white),
+                  SizedBox(height: 8),
                   Text(
                     'Simple Interest',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.lightBlueAccent,
+            shadowColor: Colors.blue,
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: InkWell(
+              onTap: () {
+                context.read<DashboardCubit>().openAreaOfCircleView(context);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const <Widget>[
+                  Icon(Icons.circle, size: 40, color: Colors.white),
+                  SizedBox(height: 8),
+                  Text(
+                    'Area of Circle',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.greenAccent,
+            shadowColor: Colors.green,
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: InkWell(
+              onTap: () {
+                context.read<DashboardCubit>().openBackgroundColorView(context);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const <Widget>[
+                  Icon(Icons.palette, size: 40, color: Colors.white),
+                  SizedBox(height: 8),
+                  Text(
+                    'Background',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
