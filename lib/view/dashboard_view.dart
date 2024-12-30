@@ -1,6 +1,7 @@
 import 'package:class_assignment_two/cubit/dashboard_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -23,7 +24,7 @@ class DashboardView extends StatelessWidget {
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
         ),
-        children: <Widget>[
+        children: [
           Card(
             color: Colors.orangeAccent,
             shadowColor: Colors.deepOrange,
@@ -84,9 +85,6 @@ class DashboardView extends StatelessWidget {
             color: Colors.greenAccent,
             shadowColor: Colors.green,
             elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
             child: InkWell(
               onTap: () {
                 context.read<DashboardCubit>().openBackgroundColorView(context);
@@ -108,6 +106,102 @@ class DashboardView extends StatelessWidget {
               ),
             ),
           ),
+          Card(
+            color: Colors.grey,
+            elevation: 5,
+            shadowColor: Colors.grey,
+            child: InkWell(
+              onTap: () {},
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.add,
+                      size: 50,
+                    ),
+                    SizedBox(
+                      height: 2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Counter Bloc",
+                        style: GoogleFonts.roboto(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.grey,
+            elevation: 5,
+            shadowColor: Colors.grey,
+            child: InkWell(
+              onTap: () {},
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.calculate,
+                      size: 50,
+                    ),
+                    SizedBox(
+                      height: 2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Arithmetic Bloc",
+                        style: GoogleFonts.roboto(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Card(
+            color: Colors.grey,
+            elevation: 5,
+            shadowColor: Colors.grey,
+            child: InkWell(
+              onTap: () {},
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.people,
+                      size: 50,
+                    ),
+                    SizedBox(
+                      height: 2,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Student Bloc",
+                        style: GoogleFonts.roboto(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
